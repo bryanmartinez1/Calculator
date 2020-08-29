@@ -1,0 +1,95 @@
+# Calculator Practice 1 #
+# Calculator Perform Addition, Subtraction, Multiplcation, Divison, Mod, Power, Trignometric Functions #
+
+import math as m
+
+print("Calculator Draft 1")
+print("This calculator performs addition (+), subtraction (-),")
+print("multiplication (*), and division (/),")
+print("mod (%), power (^), sin, cos, tan")
+print("\nWould you like to use the calculator?")
+command = (input("Type yes or no: "))
+
+
+def numbers():
+    num1 = input("Insert the first number you would like to use: ")
+    num2 = input("Insert the second number you would like to use: ")
+    print("")
+    number1 = float(num1)
+    number2 = float(num2)
+    number = [number1, number2]
+    return number
+
+
+def angle():
+    num1 = input("Insert the angle (in degrees): ")
+    number1 = float(num1)
+    number1 = (number1 * m.pi)/180
+    angles = [num1, number1]
+    return angles
+
+
+while command == "yes":
+    print("\nInsert the operation you would like to use?")
+    operation = input("Type the operation you would like to use: ")
+# Add Function #
+    if operation == "+":
+        num = numbers()
+        answer = num[0] + num[1]
+        print(str(num[0]) + " + " + str(num[1]) + " = ")
+        print(str(answer) + "\n")
+# Subtract Function #
+    elif operation == "-":
+        num = numbers()
+        answer = num[0] - num[1]
+        print(str(num[0]) + " - " + str(num[1]) + " = ")
+        print(str(answer) + "\n")
+# Multiply Function #
+    elif operation == "*":
+        num = numbers()
+        answer = num[0] * num[1]
+        print(str(num[0]) + " * " + str(num[1]) + " = ")
+        print(str(answer) + "\n")
+# Divide Function #
+    elif operation == "/":
+        num = numbers()
+        answer = num[0] / num[1]
+        print(str(num[0]) + " / " + str(num[1]) + " = ")
+        print(str(answer) + "\n")
+# Module Function #
+    elif operation == "%":
+        num = numbers()
+        answer = num[0] % num[1]
+        print(str(num[0]) + " % " + str(num[1]) + " = ")
+        print(str(answer) + "\n")
+# Power Function #
+    elif operation == "^":
+        num = numbers()
+        answer = pow(num[0], num[1])
+        print(str(num[0]) + " ^ " + str(num[1]) + " = ")
+        print(str(answer) + "\n")
+# sin Function #
+    elif operation == "sin":
+        num = angle()
+        answer = m.sin(num[1])
+        print("sin (" + str(num[0]) + ") = ")
+        print(str(answer) + "\n")
+# cos Function #
+    elif operation == "cos":
+        num = angle()
+        answer = m.cos(num[1])
+        print("cos (" + str(num[0]) + ") = ")
+        print(str(answer) + "\n")
+# tan Function #
+    elif operation == "tan":
+        num = angle()
+        answer = m.tan(num[1])
+        print("tan (" + str(num[0]) + ") = ")
+        print(str(answer) + "\n")
+# Invalid Input #
+    else:
+        print("\nInvalid operation inserted\n")
+    print("Would you like to continue")
+    command = (input("Type yes or no: "))
+
+print("\nThank you. Goodbye")
